@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Explorative Visualisierungen für Korrespondenzmetadaten</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+		<style type="text/css">
+			body {
+				background-color: #2A7299;
+				color: #fff;
+			}
+			section, p, small, a, h1, h2, h3 {
+				color: #fff !important;
+				font-family: 'PT Serif';
+			}
+			p, li, a {
+				font-size: 0.8em !important;
+			}
+			.img-no-border img {
+				border: 0px !important;
+				box-shadow: 0 0 0 !important;
+				background: none !important;
+				margin: 0.1em !important;
+				margin-top: 1em !important;
+			}
+			.graph img {
+				height: 11.0em;
+				border: 0px !important;
+				box-shadow: 0 0 0 !important;
+				background: none !important;
+			}
+			.height-12 {
+				height: 12.0em;
+			}
+			.height-8 {
+				height: 8.0em;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Explorative Visualisierungen für Korrespondenzmetadaten</h2>
+					<p>
+						<small>Jonas Müller-Laackman</small>
+					</p>
+					<p>
+						<small>correspSearch.net - Briefeditionen vernetzen<br />Berlin-Brandenburgische Akademie der Wissenschaften</small>
+					</p>
+					<p class="img-no-border">
+						<img src="static/img/tei_logo.png" height="40" />
+						<img src="static/img/bbaw_logo.png" height="60" />
+						<img src="static/img/dfg_logo.png" height="30" />
+					</p>
+				</section>
+				
+				<section>
+					<h2>correspSearch</h2>
+					<p>
+						<strong>correspSearch</strong> ist ein Aggregierungsservice für Briefmetadaten, der an der Berlin-Brandenburgischen Akademie der Wissenschaften entwickelt wird.
+					</p>
+					<p>Die frei lizensierten Briefmetadaten von aktuell über 50.000 Briefen werden dezentral von den Editionsprojekten bereitgestellt.</p>
+					<p>Es gibt keinen zeitlichen oder räumlichen Sammlungsschwerpunkt.</p>
+					<p><strong>correspSearch</strong> ist kein Ersatz für das Ursprungsangebot, Nutzer:innen sollen Edition für weitere Informationen aufsuchen.</p>
+				</section>
+
+				<section>
+					<h2>correspSearch</h2>
+					<img src="static/img/correspsearch.jpg" class="height-12" />
+				</section>
+
+				<section>
+					<h2>CMIF</h2>
+					<p>
+						Die in <strong>correspSearch</strong> aggregierten Metadaten liegen im <strong>Correspondence Metadata Interchange Format</strong> (CMIF) vor. 
+					</p>
+					<p>CMIF und <code>&lt;correspDesc&gt;</code> wird entwickelt von der <strong>TEI Correspondence SIG</strong></p>
+					<p>Personen, Organisationen und Orte werden mit Normdaten bezeichnet (GND, Viaf, ...).</p>
+				</section>
+
+				<section>
+					<h2>csLink</h2>
+					<p>
+						<strong>Vue.js</strong>-basiertes Widget für digitale Editionen zur Darstellung von anderen Briefen im selben Korrespondentennetzwerk.
+					</p>
+					<p>Anzeige einer Liste von Personen des Korrespondentennetzwerks.</p>
+					<p>https://github.com/correspSearch/csLink</p>
+				</section>
+
+				<section>
+					<h2>csLink</h2>
+					<p>Praxis-Beispiel: <strong>edition humboldt digital</strong></p>
+					<img src="static/img/csVisualLinkB.jpg" height="400">
+					<img src="static/img/csVisualLinkA.jpg" height="400">
+				</section>
+
+				<section>
+					<h3>Grundideen zur Erweiterung des Recherchezugangs um Visualisierungen</h3>
+					<p>Explorative Visualisierung setzt voraus, dass aus der Visualisierung ein Rückbezug auf die Daten möglich ist. Die Visualisierung dient der Erkundung unentdeckter Muster und Strukturen.</p>
+					<ul>
+						<li>Zweistufige Darstellung von Korrespondenznetzwerken in Graphen.</li>
+						<li>Kartendarstellung von Korrespondenznetzwerken.</li>
+						<li>Erweiterung der Suche um eine Kartenbasierte Suchfunktion (Polygone Flächensuche).</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Anforderungen</h3>
+					<p>Die Visualisierungsfunktionen sollen nahtlos in <strong>correspSearch</strong> integriert werden.</p>
+					<p>Features sollen auf explorative Nutzungsszenarien in der Recherche mit Korrespondenzmetadaten reduziert werden.</p>
+				</section>
+
+				<section>
+					<h3>Realisierung</h3>
+					<p>Entwicklung auf der Basis von <strong>Vue.js</strong>, <strong>d3.js</strong>, <strong>Leaflet.js</strong> und <strong>OpenLayers</strong> mit Anbindung an die <strong>correspSearch</strong> API.</p>
+					<p>Anbindung an bestehende Applikationen wie <strong>csLink</strong>.</p>
+					<p>Bereits verfügbare Applikationen wie <strong>Palladio</strong> oder <strong>Nodegoat</strong> können nicht nahtlos integriert werden.</p>
+				</section>
+
+				<section>
+					<h3>Problematisierung von Visualisierungen</h3>
+					<p>Nicht jede Visualisierung eignet sich gleichermaßen für die Darstellung von Korrespondenznetzwerken.</p>
+				</section>
+				<section>
+					<h3>Beispiel 1: Force-Directed Netzwork Graph</h3>
+					<p><small>Vorteil: Übersichtliche Darstellung von Personen in einem Netzwerk mit der Möglichkeit von Richtungsdarstellung.</small></p>
+					<p><small>Nachteil: Willkürliche Hierarchisierung durch Positionierung der Nodes auf dem Canvas.</small></p>
+					<p>
+						<img src="static/img/network_graph.jpg" class="height-12" />
+					</p>
+				</section>
+				<section>
+					<h3>Beispiel 2: Chord Diagram</h3>
+					<p><small>Vorteil: Keine Hierarchisierung von Nodes durch zirkuläre Anordnung und übersichtliche Darstellung von Korrespondenzen.</small></p>
+					<p><small>Nachteil: Keine übersichtliche Möglichkeit für Richtungsdarstellungen, wird außerdem sehr unübersichtlich bei größeren Datenmengen.</small></p>
+					<p>
+						<img src="static/img/csVisual.png" class="height-12" />
+					</p>
+				</section>
+				<section>
+					<h3>Beispiel 3: Heat Map</h3>
+					<p><small>Vorteil: Übersichtliche Darstellung mehrstufiger Korrespondenznetzwerke.</small></p>
+					<p><small>Nachteil: Bei unausgeglichen verteilter Aktivität im Korrespondenznetzwerk wird die Darstellung unübersichtlich.</small></p>
+					<p>
+						<img src="static/img/heatmap.jpg" class="height-12" />
+					</p>
+				</section>
+				<section>
+					<h3>Ausblick: Karten und Kartenbasierte Suche</h3>
+					<p>
+						<img src="static/img/karte_1.png" class="height-8" />
+						<img src="static/img/karte_2.png" class="height-8" />
+					</p>
+				</section>
+				<section>
+					<h3>Vielen Dank.</h3>
+					
+					<p>https://correspsearch.net/</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
