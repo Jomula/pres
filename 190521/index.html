@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/solarized.css">
 
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet"> 
+
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../lib/css/monokai.css">
 		<style type="text/css">
@@ -20,6 +22,9 @@
 			section, p, small, a, h1, h2, h3 {
 				color: #fff !important;
 				font-family: 'PT Serif';
+			}
+			h1, h2, h3, h4 {
+				text-transform: none !important;
 			}
 			p, li, a {
 				font-size: 0.8em !important;
@@ -92,13 +97,13 @@
 						Die in <strong>correspSearch</strong> aggregierten Metadaten liegen im <strong>Correspondence Metadata Interchange Format</strong> (CMIF) vor. 
 					</p>
 					<p>CMIF und <code>&lt;correspDesc&gt;</code> werden entwickelt von der <strong>TEI Correspondence SIG</strong></p>
-					<p>Personen, Organisationen und Orte werden mit Normdaten bezeichnet (GND, Viaf, ...).</p>
+					<p>Personen, Organisationen und Orte werden mit Normdaten-IDs bezeichnet (GND, VIAF, ...).</p>
 				</section>
 
 				<section>
 					<h2>csLink</h2>
 					<p>
-						<strong>Vue.js</strong>-basiertes Widget für digitale Editionen zur Darstellung von anderen Briefen im selben Korrespondentennetzwerk.
+						<strong>Vue.js</strong>-basiertes Widget für digitale Editionen zur Darstellung von anderen Briefen der Korrespondenten im selben Zeitraum.
 					</p>
 					<p>Anzeige einer Liste von Personen des Korrespondentennetzwerks.</p>
 					<p>https://github.com/correspSearch/csLink</p>
@@ -107,7 +112,7 @@
 				<section>
 					<h2>csLink</h2>
 					<p>Praxis-Beispiel: <strong>edition humboldt digital</strong></p>
-					<img src="../static/img/csVisualLinkB.jpg" height="400">
+					<img src="../static/img/csLink_total.jpg" height="400">
 					<img src="../static/img/csVisualLinkA.jpg" height="400">
 				</section>
 
@@ -117,7 +122,7 @@
 					<ul>
 						<li>Zweistufige Darstellung von Korrespondenznetzwerken in Graphen.</li>
 						<li>Kartendarstellung von Korrespondenznetzwerken.</li>
-						<li>Erweiterung der Suche um eine Kartenbasierte Suchfunktion (Polygone Flächensuche).</li>
+						<li>Erweiterung der Suche um eine kartenbasierte Suchfunktion (polygone Flächensuche).</li>
 					</ul>
 				</section>
 
@@ -131,7 +136,7 @@
 					<h3>Realisierung</h3>
 					<p>Entwicklung auf der Basis von <strong>Vue.js</strong>, <strong>d3.js</strong>, <strong>Leaflet.js</strong> und <strong>OpenLayers</strong> mit Anbindung an die <strong>correspSearch</strong> API.</p>
 					<p>Anbindung an bestehende Applikationen wie <strong>csLink</strong>.</p>
-					<p>Bereits verfügbare Applikationen wie <strong>Palladio</strong> oder <strong>Nodegoat</strong> können nicht nahtlos integriert werden.</p>
+					<p>Bereits verfügbare Applikationen wie <strong>Palladio</strong> oder <strong>Nodegoat</strong> können als Stand-Alone-Applikationen nicht nahtlos integriert werden.</p>
 				</section>
 
 				<section>
@@ -140,7 +145,7 @@
 				</section>
 				<section>
 					<h3>Beispiel 1: Force-Directed Network Graph</h3>
-					<p><small>Vorteil: Übersichtliche Darstellung von Personen in einem Netzwerk mit der Möglichkeit von Richtungsdarstellung.</small></p>
+					<p><small>Vorteil: Übersichtliche Darstellung von Personen in einem Netzwerk<br />mit der Möglichkeit von Richtungsdarstellung.</small></p>
 					<p><small>Nachteil: Willkürliche Hierarchisierung durch Positionierung der Nodes auf der Canvas.</small></p>
 					<p>
 						<img src="../static/img/network_graph.jpg" class="height-12" />
@@ -148,8 +153,8 @@
 				</section>
 				<section>
 					<h3>Beispiel 2: Chord Diagram</h3>
-					<p><small>Vorteil: Keine Hierarchisierung von Nodes durch zirkuläre Anordnung und übersichtliche Darstellung von Korrespondenzen.</small></p>
-					<p><small>Nachteil: Keine übersichtliche Möglichkeit für Richtungsdarstellungen, wird außerdem sehr unübersichtlich bei größeren Datenmengen.</small></p>
+					<p><small>Vorteil: Keine Hierarchisierung von Nodes durch zirkuläre Anordnung<br />und übersichtliche Darstellung von Korrespondenzen.</small></p>
+					<p><small>Nachteil: Keine übersichtliche Möglichkeit für Richtungsdarstellungen,<br />wird außerdem sehr unübersichtlich bei größeren Datenmengen.</small></p>
 					<p>
 						<img src="../static/img/csVisual.png" class="height-12" />
 					</p>
@@ -157,13 +162,13 @@
 				<section>
 					<h3>Beispiel 3: Heat Map</h3>
 					<p><small>Vorteil: Übersichtliche Darstellung mehrstufiger Korrespondenznetzwerke.</small></p>
-					<p><small>Nachteil: Bei unausgeglichen verteilter Aktivität im Korrespondenznetzwerk wird die Darstellung unübersichtlich.</small></p>
+					<p><small>Nachteil: Bei unausgeglichen verteilter Aktivität im Korrespondenznetzwerk<br />ist die Darstellung nicht aussagegkräftig.</small></p>
 					<p>
 						<img src="../static/img/heatmap.jpg" class="height-12" />
 					</p>
 				</section>
 				<section>
-					<h3>Ausblick: Karten und Kartenbasierte Suche</h3>
+					<h3>Ausblick: Karten und kartenbasierte Suche</h3>
 					<p>
 						<img src="../static/img/karte_1.png" class="height-8" />
 						<img src="../static/img/karte_2.png" class="height-8" />
@@ -172,7 +177,7 @@
 				<section>
 					<h3>Vielen Dank.</h3>
 					
-					<p>https://correspsearch.net/</p>
+					<p>https://correspSearch.net/</p>
 				</section>
 			</div>
 		</div>
