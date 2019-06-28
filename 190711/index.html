@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH 2019</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/bbaw.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Four Years of</h3> 
+					<h2><strong>correspSearch</strong></h2>
+					<h4>Challenges, Potentials and Lessons of Open Data Aggregation</h4>
+				</section>
+				<section>
+					<h3>What is correspSearch?</h3>
+					<p>Webservice for the aggregation of <strong>open</strong> and <strong>freely accessible metadata</strong> from <strong>printed</strong> and <strong>digital editions of correspondences</strong>.</p>
+					<p>Developed and hosted by <strong>Berlin Brandenburg Academy of Sciences and Humanities</strong>.</p>
+					<p>Awarded with the Rahtz Price for TEI Ingenuity 2018.</p>
+				</section>
+				<section>
+					<section>
+						<h3>Correspondence Metadata Interchange Format (CMIF)</h3>
+						<p>Developed by the <strong>TEI Correspondence SIG</strong></p>
+					</section>
+					<section>
+						<p>CMIF is a format for the purpose of <strong>simplifying correspondence metadata</strong> and thus offering a way for a <strong>standardized exchange of data</strong>.</p>
+					</section>
+					<section>
+						<p><strong>Flat hierarchy</strong> and <strong>simple node structure</strong> with a focus on <strong>people</strong>, <strong>places</strong> and <strong>dates</strong></p>
+					</section>
+					<section>
+						<p>CMIF requires the usage of <strong>authority files</strong> for <strong>names</strong> and <strong>places</strong> in order to account for their <strong>ambiguity</strong> and <strong>linguistic heterogeneity</strong></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Open Data</h3>
+						<p>As the metadata aggregated by our service is licensed under <strong>CC BY</strong>, it remains open and thus stands for an <strong>Open Access-based approach</strong> to correspondence metadata aggregation.</p>
+					</section>
+					<section>
+						<p>All software developed by correspSearch is published as <strong>Free Software</strong></p>
+						<p>Sources are available on<br /><strong>https://github.com/correspSearch</strong></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>CMIF Creator</h3>
+						<p><strong>Browser-based application</strong> for an <strong>easy handling</strong> of CMIF-based data.</p>
+						<p>The CMIF Creator enables the <strong>creation of correspondence metadata</strong> without any prerequisite knowledge about XML/TEI or the CMI format</p>
+					</section>
+					<section>
+						<p>All entered and processed data is <strong>saved locally</strong> and thus stays within <strong>the control of the user</strong> at any time</p>
+					</section>
+					<section>
+						<p>Authority files data for names and places can be acquired directly from <strong>GND</strong> and <strong>GeoNames</strong> via the <strong>lobid</strong> and <strong>GeoNames APIs</strong>.</p>
+					</section>
+					<section>
+						<p>The average time to process and enter the metadata of a single letter out of a printed letter edition is approximately <strong>30 to 60 seconds</strong></p>
+					</section>
+					<section>
+						<p>The output format is <strong>standardized</strong> and does not deviate from <strong>TEI specifications</strong>, which reduces the incidence of errors in the final XML.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>csLink</h3>
+						<p>csLink is a <strong>widget for websites</strong> that can be implemented and included in existing digital editions of letters.</p>
+						<p>It establishes a <strong>“network of letters”</strong>, displaying the <strong>correspondence network</strong> of a certain person and reaching beyond the scope of a single edition of letters.</p>
+					</section>
+					<section>
+						<p>Customizable by <strong>optional parameters</strong>.</p>
+					</section>
+					<section>
+						<p>Immediate <strong>epistemological gains</strong> in the <strong>study of complex network relationships</strong> from the <strong>visual impression</strong> of different letter networks and the corresponding persons.</p>
+					</section>
+					<section>
+						<p>Situate letters in a single edition within a <strong>wider context</strong> of correspondence and communication.</p>
+					</section>
+					<section>
+						<p>Ongoing development of additional ways to <strong>comprehensively visualize</strong> the aggregated data.</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<div id="logo">
+			<img src="../img/BBAW_Logo.png" alt="">
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				//width: "80%",
+				//height: "95%",
+
+				chart: {
+					defaults: {
+						global: {
+							title: { fontColor: "#FFF" },
+						},
+						legend: {
+							labels: { fontColor: "#FFF" },
+						},
+						scale: {
+							scaleLabel: { fontColor: "#FFF" },
+							gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+							ticks: { fontColor: "#FFF" },
+						}
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ]},
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../plugin/chart/Chart.min.js' },
+					{ src: '../plugin/chart/csv2chart.js' }
+				]
+			});
+		</script>
+	</body>
+</html>
